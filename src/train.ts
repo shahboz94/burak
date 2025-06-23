@@ -1,5 +1,22 @@
+console.log("--- ---");
+
+// TASK H
+
+function getPositive(text: number[]): string {
+  const result = text.filter((i) => i > 0).join("");
+  console.log(result);
+  console.log(typeof result);
+  return result;
+}
+
+getPositive([3, -1, 0, 8, 7, -3]);
+
+// shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
+// MASALAN: getPositive([1, -4, 2]) return qiladi "12"
+
 // TASK G:
 
+/*  
 function getHighestIndex(son) {
   let raqam = son[0];
   let index = 0;
@@ -15,7 +32,7 @@ function getHighestIndex(son) {
 }
 
 getHighestIndex([8, 23, 12, 21, 213, 3]);
-
+*/
 // Yagona parametrga ega function tuzing.
 // Va bu function parametr orqalik integer ma'lumot turlariga ega bo'lgan bir arrayni qabul qilsin.
 // Ushbu function bizga arrayning tarkibidagi birinchi eng katta qiymatning indeksini qaytarsin.
