@@ -1,5 +1,24 @@
 console.log("--- ---");
 
+// TASK H2
+
+function getDigits(text: string): string {
+  const result = text
+    .split("")
+    .filter((i) => i >= "0" && i <= "9")
+    .join("");
+  console.log(`Quydagi text ichidagi raqamlar: ${result}`);
+  console.log(typeof result);
+  return result;
+}
+
+getDigits("m14i1t gu5ru80h0i");
+
+//. shunday function tuzing, unga string argument pass bolsin. function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+//. masalan: getdigits("m14i1t") return qiladi "141"
+
+/*
+
 // TASK H
 
 function getPositive(text: number[]): string {
@@ -10,6 +29,7 @@ function getPositive(text: number[]): string {
 }
 
 getPositive([3, -1, 0, 8, 7, -3]);
+*/
 
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
 // MASALAN: getPositive([1, -4, 2]) return qiladi "12"
