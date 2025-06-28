@@ -1,8 +1,8 @@
-import dotenv from "dotenv";
-dotenv.config();
-import mongoose from "mongoose";
+import dotenv from "dotenv"; //invarmetiv veribil // eksternel pekej tashqaridan ustanofka qildik.
+dotenv.config(); // confik bu mezt .object ,invarmetiv veribil lar bilan boyitib beradi.
+import mongoose from "mongoose"; //object , connect esnkins mezt then catch argument .
 import app from "./app";
-
+// TCP =BACKENT + DATEBASE
 mongoose
   .connect(process.env.MONGO_URL as string, {})
   .then((data) => {

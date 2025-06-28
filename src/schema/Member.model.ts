@@ -1,11 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 import { MemberStatus, MemberType } from "../libs/types/enums/member.enum";
-
-const memberSchema = new Schema(
+// schema first,code first[forst]
+const memberSchema = new Schema( //class orqari qurilib [new Schema] orqali bilishimiz mumkin class lardan Object yasalyapti
   {
     memberType: {
       type: String,
-      enum: MemberType,
+      enum: MemberType, // enum: aniq kitriladigan type
       default: MemberType.User,
     },
 
@@ -51,8 +51,8 @@ const memberSchema = new Schema(
     },
   },
   {
-    timestamps: true, //updatedAt, createdAt
+    timestamps: true, //updatedAt, createdAt qachon hosil qilingani.
   }
 );
 
-export default mongoose.model("Member", memberSchema);
+export default mongoose.model("Member", memberSchema); // mongusda modul degan mezet orqali schema modelini hosil qiladi va sharli ravishda 'member' atab yuqoridagi memberschemani argument sifatida olamiz. // shu orqali modelga aylandi

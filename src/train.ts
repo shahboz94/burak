@@ -1,5 +1,19 @@
 console.log("--- ---");
 
+/*
+Project Standards:
+-Logging standards
+-Naming standards
+-Commenting standards
+    function, method, variable => CAMEL Case,  //goHome
+    class => PASCAL Case,                      //MemberService
+    folder => KEBAB-case,
+    css => SNAKE Case,
+    -Error handling 
+
+*/
+
+/*
 // TASK H2
 
 function getDigits(text: string): string {
@@ -16,7 +30,7 @@ getDigits("m14i1t gu5ru80h0i");
 
 //. shunday function tuzing, unga string argument pass bolsin. function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 //. masalan: getdigits("m14i1t") return qiladi "141"
-
+*/
 /*
 
 // TASK H
