@@ -12,6 +12,13 @@ Project Standards:
     -Error handling 
 
 */
+/*
+Traditional Api
+Rest Api
+Graphql Api
+...
+
+*/
 
 /*
 // TASK H2

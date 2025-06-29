@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { MemberStatus, MemberType } from "../libs/types/enums/member.enum";
+import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 // schema first,code first[forst]
 const memberSchema = new Schema( //class orqari qurilib [new Schema] orqali bilishimiz mumkin class lardan Object yasalyapti
   {
