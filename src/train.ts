@@ -1,6 +1,20 @@
 console.log("--- ---");
 
 //TASK I:
+function majorityElement(arr: number[]): number[] {
+  const countMap = arr.reduce<Record<number, number>>((acc, num) => {
+    acc[num] = (acc[num] || 0) + 1;
+    return acc;
+  }, {});
+
+  const maxCount = Math.max(...Object.values(countMap));
+
+  return Object.entries(countMap)
+    .filter(([_, count]) => count === maxCount)
+    .map(([num, _]) => Number(num));
+}
+
+console.log(majorityElement([1, 2, 6, 3, 4, 5, 4, 5, 5, 6, 3, 6, 4]));
 
 /*
 Shunday function tuzing, u parametrdagi array ichida eng ko'p
