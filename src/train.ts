@@ -1,4 +1,24 @@
 console.log("--- ---");
+
+//TASK J:
+function findLongestWord(text: string): string {
+  const words = text.split(" ");
+  const new_text = words.sort((a, b) => b.length - a.length)[0];
+
+  console.log(new_text); // Natijani shu yerda konsolga chiqaradi
+  return new_text;
+}
+
+findLongestWord("I came from Uzbekistan!");
+
+// Shunday function tuzing, u string qabul qilsin.
+// Va string ichidagi eng uzun so'zni qaytarsin.
+
+// MASALAN: findLongestWord("I came from Uzbekistan!"); return "Uzbekistan!"
+
+// Yuqoridagi text tarkibida 'Uzbekistan'
+// eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda
+
 /*
 Project Standards:
 -Logging standards
@@ -25,11 +45,6 @@ Graphql Api
 
 Traditional FD      => SSR (Admin)   =>   EJS
 Modern FD           => SPA           =>   REACT
-
-*/
-
-/*
-//TASK k:
 
 */
 
