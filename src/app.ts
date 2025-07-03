@@ -19,8 +19,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /** 4-ROUTERS **/
-//SSR : EJS
-app.use("/admin", routerAdmin); //BSSR : //EJS
+
+app.use("/admin", routerAdmin); //  SSR : //EJS
 app.use("/", router); //Middleware Design Pattern // SPA : // REACT // 1.burak bekent serverni React loyihamizga res api[epiay] servis sifatida ishlatamiz.2 chisi Adminka  loyihamizni qurish maqsida ishlatamiz.
 
 export default app;

@@ -1,4 +1,39 @@
 console.log("--- ---");
+/*
+Project Standards:
+-Logging standards
+-Naming standards
+-Commenting standards
+    function, method, variable => CAMEL Case,  //goHome
+    class => PASCAL Case,                      //MemberService
+    folder,file => KEBAB-case,
+    css => SNAKE Case,
+    -Error handling 
+
+*/
+
+/*
+
+Traditional Api
+Rest Api
+Graphql Api
+...
+
+*/
+
+/*
+
+Traditional FD      => SSR (Admin)   =>   EJS
+Modern FD           => SPA           =>   REACT
+
+*/
+
+/*
+//TASK k:
+
+*/
+
+/*
 
 //TASK I:
 function majorityElement(arr: number[]): number[] {
@@ -16,37 +51,19 @@ function majorityElement(arr: number[]): number[] {
 
 console.log(majorityElement([1, 2, 6, 3, 4, 5, 4, 5, 5, 6, 3, 6, 4]));
 
-/*
-Shunday function tuzing, u parametrdagi array ichida eng ko'p
-takrorlangan raqamni topib qaytarsin.
 
-MASALAN: majorityElement([1, 2, 3, 4, 5, 4, 3, 4]); return 4
+// Shunday function tuzing, u parametrdagi array ichida eng ko'p
+// takrorlangan raqamni topib qaytarsin.
 
-Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida 4 soni ko'p takrorlanganligi uchun 4'ni return qilmoqda.
+// MASALAN: majorityElement([1, 2, 3, 4, 5, 4, 3, 4]); return 4
 
+// Yuqoridag misolda argument sifatida kiritilayotgan array tarkibida 4 soni ko'p takrorlanganligi uchun 4'ni return qilmoqda.
 
-*/
-/*
-Project Standards:
--Logging standards
--Naming standards
--Commenting standards
-    function, method, variable => CAMEL Case,  //goHome
-    class => PASCAL Case,                      //MemberService
-    folder => KEBAB-case,
-    css => SNAKE Case,
-    -Error handling 
-
-*/
-/*
-Traditional Api
-Rest Api
-Graphql Api
-...
 
 */
 
 /*
+
 // TASK H2
 
 function getDigits(text: string): string {
@@ -64,6 +81,7 @@ getDigits("m14i1t gu5ru80h0i");
 //. shunday function tuzing, unga string argument pass bolsin. function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 //. masalan: getdigits("m14i1t") return qiladi "141"
 */
+
 /*
 
 // TASK H
@@ -76,14 +94,17 @@ function getPositive(text: number[]): string {
 }
 
 getPositive([3, -1, 0, 8, 7, -3]);
-*/
+
 
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
 // MASALAN: getPositive([1, -4, 2]) return qiladi "12"
 
+*/
+
+/* 
 // TASK G:
 
-/*  
+ 
 function getHighestIndex(son) {
   let raqam = son[0];
   let index = 0;
@@ -122,103 +143,170 @@ function findDoublers(text) {
 }
 
 findDoublers("hello");
+
+// Yagona string argumentga ega findDoublers nomli function tuzing
+// Agar stringda bittadan ortiq bir xil harflar ishtirok etgan bo'lsa
+// true yokida false natija qaytarsin.
+
+// MASALAN: findDoublers("hello"); natija true qaytadi. Sababi ikki marotaba takrorlangan 'll' harfi mavjud!
+
 */
 
+/*
 //       TASK-E
 
-// function getReverse(text) {
-//   let result = text.split("").reverse().join("");
-//   console.log(result);
-// }
+function getReverse(text) {
+  let result = text.split("").reverse().join("");
+  console.log(result);
+}
 
-// getReverse("hello");
+getReverse("hello");
+
+// Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
+
+
+*/
+/*
 
 //       TASK-D
-// function checkContent(text1, text2) {
-//   let result1 = text1.split("");
-//   let result2 = text2.split("");
+function checkContent(text1, text2) {
+  let result1 = text1.split("");
+  let result2 = text2.split("");
 
-//   result1.sort();
-//   result2.sort();
+  result1.sort();
+  result2.sort();
 
-//   return result1.join() == result2.join();
-// }
+  return result1.join() == result2.join();
+}
 
-// const result = checkContent("mitgroup", "gmtiprou");
+const result = checkContent("mitgroup", "gmtiprou");
 
-// console.log(result);
+console.log(result);
 
-// console.log(checkContent("hello", "world"));
-// console.log("====");
+console.log(checkContent("hello", "world"));
+console.log("====");
+
+// Ikkita parametra ega function tuzing, va functioning
+// berilgan birinchi va ikkinchi parametr qiymatlari o'zaro to'liq
+// mos kelsa true qiymat qaytarsin
+
+// Masalan: checkContent("mitgroup", "gmtiprou");
+// Yuqoridagi misolda birinchi va ikkinchi parametr qiymatli bir xil
+// ya'ni bir xil harflar qatnashganligi uchun true qiymat qaytaradi.
+
+*/
+/*
 
 //       TASK-C
-// const moment = require("moment");
-// class Shop {
-//   non;
-//   lagmon;
-//   cola;
-//   constructor(non, lagmon, cola) {
-//     this.non = non;
-//     this.lagmon = lagmon;
-//     this.cola = cola;
-//   }
+const moment = require("moment");
+class Shop {
+  non;
+  lagmon;
+  cola;
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
 
-//   qoldiq() {
-//     console.log(
-//       `hozir ${moment().format("HH:mm")} da ${this.non}ta non, ${
-//         this.lagmon
-//       }ta lagmon, ${this.cola}ta cola mavjud.`
-//     );
-//   }
+  qoldiq() {
+    console.log(
+      `hozir ${moment().format("HH:mm")} da ${this.non}ta non, ${
+        this.lagmon
+      }ta lagmon, ${this.cola}ta cola mavjud.`
+    );
+  }
 
-//   sotish(name, amount) {
-//     if (name === "non") {
-//       this.non -= amount;
-//     } else if (name === "lagmon") {
-//       this.lagmon -= amount;
-//     } else if (name === "cola") {
-//       this.cola -= amount;
-//     } else {
-//       console.log("bunday mahsulot mavjud emas");
-//     }
-//   }
+  sotish(name, amount) {
+    if (name === "non") {
+      this.non -= amount;
+    } else if (name === "lagmon") {
+      this.lagmon -= amount;
+    } else if (name === "cola") {
+      this.cola -= amount;
+    } else {
+      console.log("bunday mahsulot mavjud emas");
+    }
+  }
 
-//   qabul(name, amount) {
-//     if (name === "non") {
-//       this.non += amount;
-//     } else if (name === "lagmon") {
-//       this.lagmon += amount;
-//     } else if (name === "cola") {
-//       this.cola += amount;
-//     } else {
-//       console.log("bunday mahsulot mavjud emas");
-//     }
-//   }
-// }
-// const shop = new Shop(6, 8, 4);
+  qabul(name, amount) {
+    if (name === "non") {
+      this.non += amount;
+    } else if (name === "lagmon") {
+      this.lagmon += amount;
+    } else if (name === "cola") {
+      this.cola += amount;
+    } else {
+      console.log("bunday mahsulot mavjud emas");
+    }
+  }
+}
+const shop = new Shop(6, 8, 4);
+shop.qoldiq();
+console.log("mahsulotlarimizni  yangilan royhati");
+shop.sotish("non", 4);
+shop.sotish("lagmon", 4);
+
+shop.qoldiq();
+
+shop.qabul("lagmon", 5);
+
+// Shop nomli class tuzing, va bu class 3 xill parametr qabul qilsin.
+// Hamda classning quyidagdek 3'ta metodi bo'lsin:
+
+// 1) qoldiq
+// 2) sotish
+// 3) qabul
+
+// Har bir metod ishga tushgan vaqtda log qilinsin
+
+// MASALAN:
+// const shop = new Shop(4, 5, 2)
+
 // shop.qoldiq();
-// console.log("mahsulotlarimizni  yangilan royhati");
-// shop.sotish("non", 4);
-// shop.sotish("lagmon", 4);
+// natija qaytishi kerak: Hozir 20: 40'da 4'ta non, 5'ta lag'mon va 2'ta cola mavjud
 
-//shop.qoldiq();
+// shop.sotish("non", 3); & shop.qabul("cola", 4); & shop.qoldiq();
+// Natija qaytishi kerak: Hozir 20:50da 1ta non, 5ta lag'mon va 6ta cola mavjud!
 
-//shop.qabul("lagmon", 5);
+*/
 
-/*       TASK B      */
-// function countDigits(text) {
-//   const result = text.split("");
-//   const lastResult = result.filter((ele) => {
-//     return ele >= 0 && ele !== " ";
-//   });
-//   console.log(`${text} ning ichida raqamlar ${lastResult.length}ta bor`);
-// }
-// countDigits("ad2 a54f05y79w");
+/* 
+      TASK B      
+function countDigits(text) {
+  const result = text.split("");
+  const lastResult = result.filter((ele) => {
+    return ele >= 0 && ele !== " ";
+  });
+  console.log(`${text} ning ichida raqamlar ${lastResult.length}ta bor`);
+}
+countDigits("ad2 a54f05y79w");
 
-/*       TASK A      */
-// function countDigits("ad2a54y79wet0sfgb9") {
-//   const result = misra.split();
-//   const lastResult = result.filter((e) => e === alfabit);
-//   console.log(`${misra} ning ichida ${alfabit} dan ${lastResult.length}ta bor`);
-// }
-// countLetter("e", "enginee");
+//Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+//MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+
+
+*/
+
+/*  
+
+//. TASK A  
+
+function countDigits("ad2a54y79wet0sfgb9") {
+  const result = misra.split();
+  const lastResult = result.filter((e) => e === alfabit);
+  console.log(`${misra} ning ichida ${alfabit} dan ${lastResult.length}ta bor`);
+}
+countLetter("e", "enginee");
+
+// Harf sifatida kiritilgan birinchi parametr, 
+// kiritilgan ikkinchi parametr tarkibida nechta ekanligini qaytaruvchi
+// Funktsiya tuzing
+
+// Masalan: countLetter("e", "engineer")
+// 'engineer' so'zi tarkibida 'e' harfi 3 marotaba takrorlanganligi uchun
+// 3 sonini qaytaradi
+
+*/
