@@ -1,23 +1,30 @@
 console.log("--- ---");
 
-//TASK J:
-function findLongestWord(text: string): string {
-  const words = text.split(" ");
-  const new_text = words.sort((a, b) => b.length - a.length)[0];
-
-  console.log(new_text); // Natijani shu yerda konsolga chiqaradi
-  return new_text;
+//TASK:K
+function countvowels(text: string): number {
+  let counter = 0;
+  let str = text.toLowerCase();
+  for (let i = 0; i < str.length; i++) {
+    if (
+      str[i] === "a" ||
+      str[i] === "e" ||
+      str[i] === "i" ||
+      str[i] === "o" ||
+      str[i] === "u"
+    ) {
+      counter++;
+    }
+  }
+  console.log(counter);
+  return counter;
 }
 
-findLongestWord("I came from Uzbekistan!");
+countvowels("helloA");
 
-// Shunday function tuzing, u string qabul qilsin.
-// Va string ichidagi eng uzun so'zni qaytarsin.
-
-// MASALAN: findLongestWord("I came from Uzbekistan!"); return "Uzbekistan!"
-
-// Yuqoridagi text tarkibida 'Uzbekistan'
-// eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda
+// Berilayotgan parametr tarkibida nechta unli harf bor ekanligini
+// aniqlovchi function tuzing masalan: countvowels("string");
+// return 1 yuqoridagi misolda 'string' so'zi tarkibida yagona
+// unli harf 'i' bo'lganligi uchun '1'ni qaytarmoqda
 
 /*
 Project Standards:
@@ -51,6 +58,29 @@ Modern FD           => SPA           =>   REACT
 /*
  request join
  self destroy
+
+*/
+
+/*
+//TASK J:
+function findLongestWord(text: string): string {
+  const words = text.split(" ");
+  const new_text = words.sort((a, b) => b.length - a.length)[0];
+
+  console.log(new_text); // Natijani shu yerda konsolga chiqaradi
+  return new_text;
+}
+
+findLongestWord("I came from Uzbekistan!");
+
+// Shunday function tuzing, u string qabul qilsin.
+// Va string ichidagi eng uzun so'zni qaytarsin.
+
+// MASALAN: findLongestWord("I came from Uzbekistan!"); return "Uzbekistan!"
+
+// Yuqoridagi text tarkibida 'Uzbekistan'
+// eng uzun so'z bo'lganligi uchun 'Uzbekistan'ni qaytarmoqda
+
 
 */
 
