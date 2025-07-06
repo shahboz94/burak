@@ -49,6 +49,12 @@ Modern FD           => SPA           =>   REACT
 */
 
 /*
+ request join
+ self destroy
+
+*/
+
+/*
 
 //TASK I:
 function majorityElement(arr: number[]): number[] {
