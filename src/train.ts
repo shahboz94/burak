@@ -1,32 +1,27 @@
 console.log("--- ---");
 
-//TASK:K
-function countvowels(text: string): number {
-  let counter = 0;
-  let str = text.toLowerCase();
-  for (let i = 0; i < str.length; i++) {
-    if (
-      str[i] === "a" ||
-      str[i] === "e" ||
-      str[i] === "i" ||
-      str[i] === "o" ||
-      str[i] === "u"
-    ) {
-      counter++;
-    }
-  }
-  console.log(counter);
-  return counter;
+//TASK L:
+function reverseSentence(text: string): string {
+  const result = text
+    .split(" ")
+    .map((soz) => soz.split("").reverse().join(""))
+    .join(" ");
+
+  console.log(result);
+  return result;
 }
 
-countvowels("helloA");
+reverseSentence("we like coding!");
 
-// Berilayotgan parametr tarkibida nechta unli harf bor ekanligini
-// aniqlovchi function tuzing masalan: countvowels("string");
-// return 1 yuqoridagi misolda 'string' so'zi tarkibida yagona
-// unli harf 'i' bo'lganligi uchun '1'ni qaytarmoqda
+//So'zlarni ketma - ketligini buzmasdan har bir so'zni
+//alohida teskarisiga o'girib beradigan fucntion tuzing.
+//Funtion yagona string qabul qilsin
+
+//MASALAN: reverseSentence("we like coding!") return "ew ekil !gnidoc";
+//Qaytayotgan natijaga e'tibor bersangiz, so'zlar joyi o'zgarmasdan turgan o'rnida teskarisiga o'girilmoqda
 
 /*
+
 Project Standards:
 -Logging standards
 -Naming standards
@@ -58,6 +53,35 @@ Modern FD           => SPA           =>   REACT
 /*
  request join
  self destroy
+
+*/
+
+/*
+
+//TASK:K
+function countvowels(text: string): number {
+  let counter = 0;
+  let str = text.toLowerCase();
+  for (let i = 0; i < str.length; i++) {
+    if (
+      str[i] === "a" ||
+      str[i] === "e" ||
+      str[i] === "i" ||
+      str[i] === "o" ||
+      str[i] === "u"
+    ) {
+      counter++;
+    }
+  }
+  console.log(counter);
+  return counter;
+}
+
+countvowels("helloA");
+// Berilayotgan parametr tarkibida nechta unli harf bor ekanligini
+// aniqlovchi function tuzing masalan: countvowels("string");
+// return 1 yuqoridagi misolda 'string' so'zi tarkibida yagona
+// unli harf 'i' bo'lganligi uchun '1'ni qaytarmoqda
 
 */
 
