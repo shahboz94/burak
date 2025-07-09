@@ -34,7 +34,7 @@ Project Standards:
 
 */
 
-/*
+/* Request:
 
 Traditional Api
 Rest Api
@@ -43,17 +43,24 @@ Graphql Api
 
 */
 
-/*
+/* Frontend Development
 
 Traditional FD      => SSR (Admin)   =>   EJS
 Modern FD           => SPA           =>   REACT
 
 */
 
-/*
+/* cookies
  request join
  self destroy
 
+*/
+
+/* Validation:
+ Frontend validation
+ Backend  validation
+ Databese validation
+ ? pipe validation ?
 */
 
 /*
