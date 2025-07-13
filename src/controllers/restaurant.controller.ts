@@ -119,16 +119,20 @@ restaurantController.getUsers = async (req: Request, res: Response) => {
     res.render("users", { users: result });
   } catch (err) {
     console.error("Error, getUsers:", err);
-    res.redirect("/admin");
+    res.redirect("/admin/login");
   }
 };
 
-restaurantController.updateChosenUser = (req: Request, res: Response) => {
+restaurantController.updateChosenUser = async (req: Request, res: Response) => {
   try {
     console.log("updateChosenUser ");
+    const result = await memberService.updateChosenUser(req.body);
+
+    res.status(HttpCode.OK).json({ data: result });
   } catch (err) {
     console.error("Error, updateChosenUser:", err);
-    res.redirect("/admin");
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.standard.code).json(Errors.standard);
   }
 };
 
