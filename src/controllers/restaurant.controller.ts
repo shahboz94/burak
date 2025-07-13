@@ -48,6 +48,7 @@ restaurantController.processSignup = async (
     console.log("processSignup req.body:", req.body);
     const file = req.file;
     if (!file)
+      //agar file bosh bolsa yoki bolmasa custom error classni beryapmiz!!!
       throw new Errors(HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG);
 
     const newMember: MemberInput = req.body;
@@ -81,8 +82,9 @@ restaurantController.processLogin = async function (
     const result = await memberService.processLogin(input);
     //TODO:SESSIONS  AUTHENTICATION
 
-    req.session.member = result;
+    req.session.member = result; //db session 2 [frondend] cookie.sid ga malumotni joylaydi
     req.session.save(function () {
+      //tepadagi 2 ta ishni qilishini kafolatlaydigan qisim dok da shunaqa!!
       res.redirect("/admin/product/all");
     });
   } catch (err) {
@@ -108,6 +110,28 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
   }
 };
 
+restaurantController.getUsers = async (req: Request, res: Response) => {
+  try {
+    console.log("getUsers ");
+    const result = await memberService.getUsers();
+    console.log("result:", result);
+
+    res.render("users", { users: result });
+  } catch (err) {
+    console.error("Error, getUsers:", err);
+    res.redirect("/admin");
+  }
+};
+
+restaurantController.updateChosenUser = (req: Request, res: Response) => {
+  try {
+    console.log("updateChosenUser ");
+  } catch (err) {
+    console.error("Error, updateChosenUser:", err);
+    res.redirect("/admin");
+  }
+};
+
 restaurantController.checkAuthSession = async (
   req: AdminRequest,
   res: Response
@@ -122,8 +146,9 @@ restaurantController.checkAuthSession = async (
     res.send(err);
   }
 };
-
+//Authorization – [o‘zor-ay-zey-shn] Kimga nima qilishga ruxsat borligini tekshirish
 restaurantController.verifyRestaurant = (
+  //parametr
   req: AdminRequest,
   res: Response,
   next: NextFunction
@@ -140,3 +165,5 @@ restaurantController.verifyRestaurant = (
 };
 
 export default restaurantController;
+//Authentication – [o‘sen-ti-fi-key-shn] login bolish
+//Authorization – [o‘zor-ay-zey-shn] tamg'a olish. Authentication+Permission[ruhsat berish]  Kimga nima qilishga ruxsat borligini tekshirish

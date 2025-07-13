@@ -34,7 +34,7 @@ export interface ProductInput {
 }
 
 export interface ProductUpdateInput {
-  _id: ObjectId;
+  _id: ObjectId; //qaysi Product Update[ozgartirish] qilmoqchiligini kiritamiz
   productStatus?: ProductStatus;
   productCollection?: ProductCollection;
   productName?: string;

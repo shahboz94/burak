@@ -11,7 +11,7 @@ export enum HttpCode {
 
 export enum Message {
   SOMETHING_WENT_WRONG = "Something went wrong!",
-  NOT_FOUND = "No date is found!",
+  NO_DATA_FOUND = "No date is found!",
   CREATE_FAILED = "Create failed!",
   UPDATE_FAILED = "Update failed!",
 

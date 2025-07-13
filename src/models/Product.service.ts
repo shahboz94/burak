@@ -15,10 +15,10 @@ class ProductService {
   }
   /** SPA */
   /** SSR */
-
+  //difine
   public async getAllProducts(): Promise<Product[]> {
     const result = await this.productModel.find().exec();
-    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NOT_FOUND);
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
     return result;
   }
@@ -32,14 +32,16 @@ class ProductService {
     }
   }
   public async updateChosenProduct(
+    //updateChosenProduct metodini await bilan chaqirib//Bu  – mahsulotni ID orqali topib, yangilaydi, va yangilangan versiyasini qaytaradi.
     id: string,
     input: ProductUpdateInput
   ): Promise<Product> {
+    //“Biz updateChosenProduct metodini await bilan chaqiryapmiz. Bu metod id va input ni qabul qiladi hamda Promise<Product> (ya’ni mahsulot) qaytaradi.”
     // string => object id
-    id = shapeIntoMongooseObjectId(id);
+    id = shapeIntoMongooseObjectId(id); //Bu qator — string ko‘rinishidagi ID'ni MongoDB ObjectId ko‘rinishiga o‘tkazadi.
     const result = await this.productModel
-      .findByIdAndUpdate({ _id: id }, input, { new: true })
-      .exec();
+      .findByIdAndUpdate({ _id: id }, input, { new: true }) //`findByIdAndUpdate()` — ID orqali topib, yangilaydi.
+      .exec(); // query  //^ Mahsulotni topib, yangilaydi va yangisini qaytaradi
     if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
     return result;

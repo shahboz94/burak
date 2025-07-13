@@ -38,12 +38,14 @@ productController.createNewProduct = async (
 
     const data: ProductInput = req.body;
     data.productImages = req.files?.map((ele) => {
+      // yonalish
       return ele.path.replace(/\\/g, "/"); //windossdagi muamoni togrilaydi
     });
 
-    await productService.createNewProduct(data);
+    await productService.createNewProduct(data); //Bu qator – productService nomli servis klassidagi createNewProduct() degan metodni chaqiryapti, va unga data nomli obyekt yuboryapti.
 
     res.send(
+      // cilentga javob yollayapti.
       `<script> alert("Sucessful creation"); window.location.replace('admin/product/all')</script>`
     );
   } catch (err) {
@@ -57,9 +59,11 @@ productController.createNewProduct = async (
 };
 
 productController.updateChosenProduct = async (req: Request, res: Response) => {
+  // define
   try {
     console.log("updateChosenProduct ");
-    const id = req.params.id;
+    const id = req.params.id; // Bu kod URL orqali yuborilgan mahsulot ID sini olib, id degan o‘zgaruvchiga saqlaydi.
+
     const result = await productService.updateChosenProduct(id, req.body);
 
     res.status(HttpCode.OK).json({ data: result });

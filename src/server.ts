@@ -5,7 +5,7 @@ import app from "./app";
 // TCP =BACKENT + DATEBASE
 mongoose
   .connect(process.env.MONGO_URL as string, {})
-  .then((data) => {
+  .then((_data) => {
     console.log("MongoDB connected succed");
     const PORT = process.env.PORT ?? 3003;
 
