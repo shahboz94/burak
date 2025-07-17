@@ -64,9 +64,9 @@ restaurantController.processSignup = async (
   } catch (err) {
     console.error("Error, processSignup:", err);
     const message =
-      err instanceof Error ? err.message : Message.SOMETHING_WENT_WRONG;
+      err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert("${message}"); window.location.replace('admin/signup')</script>`
+      `<script> alert("${message}"); window.location.replace('/admin/signup')</script>`
     );
   }
 };
@@ -90,9 +90,9 @@ restaurantController.processLogin = async function (
   } catch (err) {
     console.error("Error, processLogin:", err);
     const message =
-      err instanceof Error ? err.message : Message.SOMETHING_WENT_WRONG;
+      err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert("${message}"); window.location.replace('admin/login')</script>`
+      `<script> alert("${message}"); window.location.replace('/admin/login')</script>`
     );
   }
 };
