@@ -46,6 +46,7 @@ restaurantController.processSignup = async (
   try {
     //console.log("processSignup ");
     console.log("processSignup req.body:", req.body);
+    console.log("req.body:", req.body);
     const file = req.file;
     if (!file)
       //agar file bosh bolsa yoki bolmasa custom error classni beryapmiz!!!
