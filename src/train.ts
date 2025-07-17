@@ -1,28 +1,25 @@
 console.log("--- ---");
 
-//TASK N:
+//TASK O:
 
-function palindromCheck(text: string) {
-  let reversed_text = text.split("").reverse().join("");
-  let result = text === reversed_text;
-  console.log("Palindrom textmi?", result);
+function calculateSumOfNumbers(raqam: any[]): number {
+  const result = raqam.reduce((son: number, item: any) => {
+    return typeof item === "number" ? son + item : son;
+  }, 0);
+
+  console.log("Yig'indi:", result);
   return result;
 }
 
-palindromCheck("dad");
-palindromCheck("anna");
-palindromCheck("function");
+calculateSumOfNumbers([15, "16", { son: 17 }, true, 45]);
 
-// Parametr sifatida yagona string qabul qiladigan function tuzing.
-// Va bu function string'ni palindrom so'z yoki palindrom so'z emasligini aniqlab (boolean)
-// 'true' yokida 'false' qaytarsin.
+// Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
+// Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
 
-// MASALAN: palindromCheck("dad") return true; palindromCheck("son") return false;
-// Birinchi misolda 'dad' so'zini ikkala tarafdan o'qilganda ham bir xil ma'noni beradi (true)
-// Ikkinchi misolda 'son' so'zini ikkala tarafdan o'qilganda bir xil ma'noni bermaydi (false)
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]); return 45
 
-// *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
-// bir xil ma'noni beradigan so'zga aytiladi
+// Yuqoridagi misolda array tarkibida faqatgina ikkita yagona son mavjud bular 10 hamda 35
+// Qolganlari nested bo'lib yoki type'lari number emas.
 
 /*
 
@@ -68,6 +65,34 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+//TASK N:
+
+function palindromCheck(text: string) {
+  let reversed_text = text.split("").reverse().join("");
+  let result = text === reversed_text;
+  console.log("Palindrom textmi?", result);
+  return result;
+}
+
+palindromCheck("dad");
+palindromCheck("anna");
+palindromCheck("function");
+
+// Parametr sifatida yagona string qabul qiladigan function tuzing.
+// Va bu function string'ni palindrom so'z yoki palindrom so'z emasligini aniqlab (boolean)
+// 'true' yokida 'false' qaytarsin.
+
+// MASALAN: palindromCheck("dad") return true; palindromCheck("son") return false;
+// Birinchi misolda 'dad' so'zini ikkala tarafdan o'qilganda ham bir xil ma'noni beradi (true)
+// Ikkinchi misolda 'son' so'zini ikkala tarafdan o'qilganda bir xil ma'noni bermaydi (false)
+
+// *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
+// bir xil ma'noni beradigan so'zga aytiladi
+
+*/
+
 /*
 
 //TASK L:
