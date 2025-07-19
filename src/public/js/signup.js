@@ -1,6 +1,7 @@
 console.log("Signup frontend javascript file");
 
 $(function () {
+  //$(function() { ... }) — sahifa yuklangach ishlaydi.
   const fileTarget = $(".file-box .upload-hidden");
   let filename;
 
