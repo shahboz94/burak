@@ -1,25 +1,19 @@
 console.log("--- ---");
 
-//TASK O:
+//TASK P:
 
-function calculateSumOfNumbers(raqam: any[]): number {
-  const result = raqam.reduce((son: number, item: any) => {
-    return typeof item === "number" ? son + item : son;
-  }, 0);
-
-  console.log("Yig'indi:", result);
+function objectToArray(obj: Record<string, any>): [string, any][] {
+  const result = Object.entries(obj);
+  console.log(result);
   return result;
 }
 
-calculateSumOfNumbers([15, "16", { son: 17 }, true, 45]);
+objectToArray({ a: 10, b: 20 });
 
-// Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
-// Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
+// Parametr sifatida yagona object qabul qiladigan function yozing.
+// Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
 
-// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]); return 45
-
-// Yuqoridagi misolda array tarkibida faqatgina ikkita yagona son mavjud bular 10 hamda 35
-// Qolganlari nested bo'lib yoki type'lari number emas.
+// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 
 /*
 
@@ -65,6 +59,30 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+//TASK O:
+
+function calculateSumOfNumbers(raqam: any[]): number {
+  const result = raqam.reduce((son: number, item: any) => {
+    return typeof item === "number" ? son + item : son;
+  }, 0);
+
+  console.log("Yig'indi:", result);
+  return result;
+}
+
+calculateSumOfNumbers([15, "16", { son: 17 }, true, 45]);
+
+// Shunday function yozing va u har xil qiymatlardan iborat array qabul qilsin.
+// Va array ichidagi sonlar yig'indisini hisoblab chiqgan javobni qaytarsin
+
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]); return 45
+
+// Yuqoridagi misolda array tarkibida faqatgina ikkita yagona son mavjud bular 10 hamda 35
+// Qolganlari nested bo'lib yoki type'lari number emas.
+
+*/
 
 /*
 //TASK N:
