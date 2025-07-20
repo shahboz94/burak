@@ -57,7 +57,7 @@ const productSchema = new Schema(
 );
 
 productSchema.index(
-  { productName: 1, productSize: 1, productVolume: 1 },
+  { productName: 1, productSize: 1, productVolume: 1, productStatus: 1 },
   { unique: true }
 );
 export default mongoose.model("Product", productSchema); // mongusda modul degan mezet orqali schema modelini hosil qiladi va sharli ravishda 'member' atab yuqoridagi memberschemani argument sifatida olamiz. // shu orqali modelga aylandi
