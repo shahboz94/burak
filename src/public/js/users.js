@@ -16,7 +16,7 @@ $(function () {
       })
       .then((response) => {
         console.log("response:", response);
-        const result = response.date;
+        const result = response.data;
         console.log("result:", result);
 
         if (result.data) {
