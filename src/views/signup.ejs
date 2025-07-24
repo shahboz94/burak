@@ -4,12 +4,10 @@
 
 <body>
   <div class="signup-container">
-    <form
-      onsubmit="return validateSignupForm()"
-      action="/admin/signup"
-      method="POST"
-      enctype="multipart/form-data"
-    >
+    <form onsubmit="return validateSignupForm()" 
+    action="/admin/signup" 
+    method="POST" 
+    enctype="multipart/form-data">
       <div class="signup-frame" style="width: 650px">
         <div class="signup-top">
           <span>Signup</span>
@@ -25,12 +23,12 @@
             <label>Restaurant *</label>
             <input
               type="text"
-              name="memberNick"
+              name="memberNick"    
               class="member-nick"
               placeholder="Username"
               value=""
-            />
-          </div>
+            /> 
+          </div> 
           <div class="sign-up-frame">
             <label>Phone *</label>
             <input

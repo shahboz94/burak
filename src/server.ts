@@ -3,7 +3,9 @@ dotenv.config(); // confik bu mezt .object ,invarmetiv veribil lar bilan boyitib
 import mongoose from "mongoose"; //object , connect esnkins mezt then catch argument .
 import app from "./app";
 // TCP =BACKENT + DATEBASE
+
 mongoose
+
   .connect(process.env.MONGO_URL as string, {})
   .then((_data) => {
     console.log("MongoDB connected succed");
@@ -15,3 +17,12 @@ mongoose
     });
   })
   .catch((err) => console.log("ERROR on connection MongoDB:", err));
+/* PATTERNS
+ 
+ARCHITECTURE pattern: MVC DI REDUX CACHE
+DESIGN pattern: MiddleWare Decorator
+ 
+BURAK => MVC MiddleWare REDUX
+NESTAR => MVC DI MiddleWare Decorator CACHE
+ 
+*/

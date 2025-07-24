@@ -6,7 +6,7 @@ const memberSchema = new Schema( //class orqari qurilib [new Schema] orqali bili
     memberType: {
       type: String,
       enum: MemberType, // enum: aniq kitriladigan type
-      default: MemberType.User,
+      default: MemberType.USER,
     },
 
     memberStatus: {

@@ -1,19 +1,21 @@
 console.log("--- ---");
 
-//TASK P:
+//TASK G:
 
-function objectToArray(obj: Record<string, any>): [string, any][] {
-  const result = Object.entries(obj);
-  console.log(result);
-  return result;
+function getHighestIndex(arr: any[]): number {
+  const max = Math.max(...arr);
+  return arr.indexOf(max);
 }
 
-objectToArray({ a: 10, b: 20 });
+console.log(getHighestIndex([5, 21, 12, 21, 8]));
 
-// Parametr sifatida yagona object qabul qiladigan function yozing.
-// Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
+// Yagona parametrga ega function tuzing.
+// Va bu function parametr orqalik integer ma'lumot turlariga ega bo'lgan bir arrayni qabul qilsin.
+// Ushbu function bizga arrayning tarkibidagi birinchi eng katta qiymatning indeksini qaytarsin.
 
-// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+// MASALAN: getHighestIndex([5, 21, 12, 21 ,8]); return qiladi 1 sonini
+// Yuqoridagi misolda, birinchi indeksda 21 joylashgan.
+// Va bu 21 soni arrayning tarkibidagi birinchi eng katta son hisobladi va bizga uning indeksi 1 qaytadrildi.
 
 /*
 
@@ -60,6 +62,23 @@ Modern FD           => SPA           =>   REACT
 
 //.                           TASKLAR:
 
+/*
+//TASK P:
+
+function objectToArray(obj: Record<string, any>): [string, any][] {
+  const result = Object.entries(obj);
+  console.log(result);
+  return result;
+}
+
+objectToArray({ a: 10, b: 20 });
+
+// Parametr sifatida yagona object qabul qiladigan function yozing.
+// Qabul qilingan objectni nested array sifatida convert qilib qaytarsin
+
+// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+
+*/
 /*
 //TASK O:
 
