@@ -1,5 +1,26 @@
 console.log("--- ---");
 
+//TASK R
+
+function calculate(str: string): number {
+  const result = str
+    .replace(/\s/g, "")
+    .split("+")
+    .map(Number)
+    .reduce((a, b) => a + b, 0);
+
+  console.log(`Natija: ${result}`);
+  return result;
+}
+
+calculate("2 + 8");
+// Shunday function yozing, u string parametrga ega bo'lsin.
+// Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
+// string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
+
+// MASALAN: calculate("1 + 3"); return 4;
+// 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda.
+
 //TASK G:
 
 function getHighestIndex(arr: any[]): number {
