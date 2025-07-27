@@ -1,42 +1,25 @@
 console.log("--- ---");
 
-//TASK R
+//TASK S
+function missingNumber(nums: number[]): number {
+  const missing = Array(nums.length + 1)
+    .fill(0)
+    .map((_, i) => i)
+    .filter((x) => !nums.includes(x))[0];
 
-function calculate(str: string): number {
-  const result = str
-    .replace(/\s/g, "")
-    .split("+")
-    .map(Number)
-    .reduce((a, b) => a + b, 0);
-
-  console.log(`Natija: ${result}`);
-  return result;
+  console.log(`Tushib qolgan son: ${missing}`);
+  return missing;
 }
 
-calculate("2 + 8");
-// Shunday function yozing, u string parametrga ega bo'lsin.
-// Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
-// string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
+missingNumber([3, 0, 5, 4, 1]);
 
-// MASALAN: calculate("1 + 3"); return 4;
-// 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda.
+// Shunday function tuzing, u numberlardan tashkil topgan array qabul qilsin
+// va o'sha numberlar orasidagi tushib qolgan sonni topib uni return qilsin.
 
-//TASK G:
+// MASALAN: missingNumber([3, 0, 1]); return 2
 
-function getHighestIndex(arr: any[]): number {
-  const max = Math.max(...arr);
-  return arr.indexOf(max);
-}
-
-console.log(getHighestIndex([5, 21, 12, 21, 8]));
-
-// Yagona parametrga ega function tuzing.
-// Va bu function parametr orqalik integer ma'lumot turlariga ega bo'lgan bir arrayni qabul qilsin.
-// Ushbu function bizga arrayning tarkibidagi birinchi eng katta qiymatning indeksini qaytarsin.
-
-// MASALAN: getHighestIndex([5, 21, 12, 21 ,8]); return qiladi 1 sonini
-// Yuqoridagi misolda, birinchi indeksda 21 joylashgan.
-// Va bu 21 soni arrayning tarkibidagi birinchi eng katta son hisobladi va bizga uning indeksi 1 qaytadrildi.
+// Yuqoridagi misolda, berilayotgan sonlar tarkibini tartiblasak
+// '2' soni tushib qolgan
 
 /*
 
@@ -82,6 +65,53 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+//TASK R
+
+function calculate(str: string): number {
+  const result = str
+    .replace(/\s/g, "")
+    .split("+")
+    .map(Number)
+    .reduce((a, b) => a + b, 0);
+
+  console.log(`Natija: ${result}`);
+  return result;
+}
+
+calculate("2 + 8");
+// Shunday function yozing, u string parametrga ega bo'lsin.
+// Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
+// string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
+
+// MASALAN: calculate("1 + 3"); return 4;
+// 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda.
+
+
+
+*/
+
+/*
+
+//TASK G:
+
+function getHighestIndex(arr: any[]): number {
+  const max = Math.max(...arr);
+  return arr.indexOf(max);
+}
+
+console.log(getHighestIndex([5, 21, 12, 21, 8]));
+
+// Yagona parametrga ega function tuzing.
+// Va bu function parametr orqalik integer ma'lumot turlariga ega bo'lgan bir arrayni qabul qilsin.
+// Ushbu function bizga arrayning tarkibidagi birinchi eng katta qiymatning indeksini qaytarsin.
+
+// MASALAN: getHighestIndex([5, 21, 12, 21 ,8]); return qiladi 1 sonini
+// Yuqoridagi misolda, birinchi indeksda 21 joylashgan.
+// Va bu 21 soni arrayning tarkibidagi birinchi eng katta son hisobladi va bizga uning indeksi 1 qaytadrildi.
+
+*/
 
 /*
 //TASK P:
