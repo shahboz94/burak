@@ -1,25 +1,20 @@
 console.log("--- ---");
-
-//TASK S
-function missingNumber(nums: number[]): number {
-  const missing = Array(nums.length + 1)
-    .fill(0)
-    .map((_, i) => i)
-    .filter((x) => !nums.includes(x))[0];
-
-  console.log(`Tushib qolgan son: ${missing}`);
-  return missing;
+//TASK T
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  const mergedArray = [...arr1, ...arr2];
+  mergedArray.sort((a, b) => a - b);
+  console.log(mergedArray);
+  console.log(`Tartiblangan sonlar:${mergedArray}`);
+  return mergedArray;
 }
 
-missingNumber([3, 0, 5, 4, 1]);
+mergeSortedArrays([0, 3, 4, 7, 11], [4, 6, 9, 10]);
+// Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
+// Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
 
-// Shunday function tuzing, u numberlardan tashkil topgan array qabul qilsin
-// va o'sha numberlar orasidagi tushib qolgan sonni topib uni return qilsin.
+// MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30, 31];
 
-// MASALAN: missingNumber([3, 0, 1]); return 2
-
-// Yuqoridagi misolda, berilayotgan sonlar tarkibini tartiblasak
-// '2' soni tushib qolgan
+// Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda.
 
 /*
 
@@ -66,6 +61,30 @@ Modern FD           => SPA           =>   REACT
 
 //.                           TASKLAR:
 
+/*
+//TASK S
+function missingNumber(nums: number[]): number {
+  const missing = Array(nums.length + 1)
+    .fill(0)
+    .map((_, i) => i)
+    .filter((x) => !nums.includes(x))[0];
+
+  console.log(`Tushib qolgan son: ${missing}`);
+  return missing;
+}
+
+missingNumber([3, 0, 5, 4, 1]);
+
+// Shunday function tuzing, u numberlardan tashkil topgan array qabul qilsin
+// va o'sha numberlar orasidagi tushib qolgan sonni topib uni return qilsin.
+
+// MASALAN: missingNumber([3, 0, 1]); return 2
+
+// Yuqoridagi misolda, berilayotgan sonlar tarkibini tartiblasak
+// '2' soni tushib qolgan
+
+
+*/
 /*
 //TASK R
 
