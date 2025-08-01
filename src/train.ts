@@ -1,20 +1,27 @@
 console.log("--- ---");
-//TASK T
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-  const mergedArray = [...arr1, ...arr2];
-  mergedArray.sort((a, b) => a - b);
-  console.log(mergedArray);
-  console.log(`Tartiblangan sonlar:${mergedArray}`);
-  return mergedArray;
+// TASK U
+function sumOdds(n: number): number {
+  const result = Array.from({ length: n }, (_, i) => i).filter(
+    (i) => i % 2 === 1
+  ).length;
+  console.log(result);
+  return result;
 }
+sumOdds(8.9); // Output: 4
+sumOdds(6); // Output: 3
 
-mergeSortedArrays([0, 3, 4, 7, 11], [4, 6, 9, 10]);
-// Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
-// Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
+sumOdds(7); // Output: 3
+sumOdds(11); // Output: 5
 
-// MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30, 31];
+// Shunday function tuzing, uni number parametri bo'lsin.
+// Va bu function berilgan parametrgacha, 0'dan boshlab
+// oraliqda nechta toq sonlar borligini aniqlab return qilsi.
 
-// Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda.
+// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+// Yuqoridagi birinchi misolda, argument sifatida, 9 berilmoqda.
+// Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud.
+// Keyingi namunada ham xuddi shunday xolat takrorlanmoqda.
 
 /*
 
@@ -60,6 +67,27 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+
+//TASK T
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  const mergedArray = [...arr1, ...arr2];
+  mergedArray.sort((a, b) => a - b);
+  console.log(mergedArray);
+  console.log(`Tartiblangan sonlar:${mergedArray}`);
+  return mergedArray;
+}
+
+mergeSortedArrays([0, 3, 4, 7, 11], [4, 6, 9, 10]);
+// Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin.
+// Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
+
+// MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30, 31];
+
+// Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda.
+
+*/
 
 /*
 //TASK S
