@@ -1,27 +1,29 @@
 console.log("--- ---");
-// TASK U
-function sumOdds(n: number): number {
-  const result = Array.from({ length: n }, (_, i) => i).filter(
-    (i) => i % 2 === 1
-  ).length;
-  console.log(result);
+
+//TASK V
+
+function countChars(text: string): { [key: string]: number } {
+  const result: { [key: string]: number } = {};
+  text.split("").forEach((i: string) => {
+    if (i !== " ") {
+      result[i] = (result[i] || 0) + 1;
+    }
+  });
+  console.log("result:", result);
   return result;
 }
-sumOdds(8.9); // Output: 4
-sumOdds(6); // Output: 3
 
-sumOdds(7); // Output: 3
-sumOdds(11); // Output: 5
+countChars("hello");
 
-// Shunday function tuzing, uni number parametri bo'lsin.
-// Va bu function berilgan parametrgacha, 0'dan boshlab
-// oraliqda nechta toq sonlar borligini aniqlab return qilsi.
+// Shunday function yozing, uni string parametri bo'lsin.
+// Va bu function stringdagi har bir harfni o'zi bilan
+// necha marotaba taktorlanganligini ko'rsatuvchi object qaytarsin.
 
-// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+// MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
 
-// Yuqoridagi birinchi misolda, argument sifatida, 9 berilmoqda.
-// Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud.
-// Keyingi namunada ham xuddi shunday xolat takrorlanmoqda.
+// Yuqoridagi misolda, 'hello' so'zi tarkibida
+// qatnashgan harflar necha marotaba takrorlangini bilan
+// object sifatida qaytarilmoqda.
 
 /*
 
@@ -67,6 +69,34 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+
+// TASK U
+function sumOdds(n: number): number {
+  const result = Array.from({ length: n }, (_, i) => i).filter(
+    (i) => i % 2 === 1
+  ).length;
+  console.log(result);
+  return result;
+}
+sumOdds(8.9); // Output: 4
+sumOdds(6); // Output: 3
+
+sumOdds(7); // Output: 3
+sumOdds(11); // Output: 5
+
+// Shunday function tuzing, uni number parametri bo'lsin.
+// Va bu function berilgan parametrgacha, 0'dan boshlab
+// oraliqda nechta toq sonlar borligini aniqlab return qilsi.
+
+// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+// Yuqoridagi birinchi misolda, argument sifatida, 9 berilmoqda.
+// Va 0'dan boshlab sanaganda 9'gacha 4'ta toq son mavjud.
+// Keyingi namunada ham xuddi shunday xolat takrorlanmoqda.
+
+*/
 
 /*
 
