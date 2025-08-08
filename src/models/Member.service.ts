@@ -12,6 +12,7 @@ import { shapeIntoMongooseObjectId } from "../libs/config";
 
 class MemberService {
   private readonly memberModel;
+  static ACTIVE: unknown;
 
   constructor() {
     this.memberModel = MemberModel;
@@ -57,6 +58,15 @@ class MemberService {
     }
 
     return await this.memberModel.findById(member._id).lean().exec();
+  }
+  public async getMemberDetail(member: Member): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId(member._id);
+    const result = await this.memberModel
+      .findOne({ _id: memberId, memberStatus: MemberStatus.ACTIVE })
+      .exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.CREATE_FAILED);
+
+    return result;
   }
 
   /**  SSR   */
