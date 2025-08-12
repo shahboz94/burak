@@ -17,12 +17,12 @@ const store = new MongoDBStore({
 });
 /** 1-ENTRANCE **/
 const app = express(); //Object :Backentni hosil qilyapmiz
-//console.log("__dirname:", __dirname);
-app.use(express.static(path.join(__dirname, "public"))); //userga ochiqlayapmiz
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cookieParser());
-app.use(morgan(MORGAN_FORMAT));
+app.use(express.static(path.join(__dirname, "public"))); //userga public faylni ochiqlayapmiz
+app.use(express.urlencoded({ extended: true })); // tradional requestlarni hendil qilish. missol uchun form tradishional request
+app.use("/uploads", express.static("./uploads")); //uploads file mizni ochiqladik
+app.use(express.json()); //kirib kelyotgan rest app[eypiay ] larni body qismini bizni serverimizga amalga oshiradi.yani  Express.js da JSON formatidagi HTTP so‘rovlarining body qismini avtomatik parsing qilish uchun ishlatiladi.
+app.use(cookieParser()); //Express.js dagi middleware bo‘lib, kelayotgan HTTP so‘rov (request) dagi cookie larni o‘qish va parslash uchun ishlatiladi.
+app.use(morgan(MORGAN_FORMAT)); //Express.js serverida HTTP so‘rovlarini log qilish uchun ishlatiladigan middleware qo‘shish.
 /** 2-SESSIONS **/
 
 app.use(
