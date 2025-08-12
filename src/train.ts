@@ -1,28 +1,38 @@
 console.log("--- ---");
-//TASK W
 
-function chunkArray(arr: number[], size: number): number[][] {
-  if (arr.length === 0) return [];
+// TASK X
 
-  const result: number[][] = [
-    arr.slice(0, size),
-    ...chunkArray(arr.slice(size), size),
-  ];
-
+function countOccurrences(obj: Record<string, any>, keyName: string): any {
+  const result = Object.keys(obj).reduce((count, key) => {
+    const text = key === keyName ? 1 : 0;
+    const text2 =
+      typeof obj[key] === "object" && obj[key] !== null
+        ? countOccurrences(obj[key], keyName)
+        : 0;
+    return count + text + text2;
+  }, 0);
   return result;
 }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+console.log(
+  countOccurrences(
+    { model: "Genesis", steer: { model: "HANKOOK", size: 20 } },
+    "model"
+  )
+);
 
-// Shunday function yozing, u o'ziga parametr sifatida
-// yagona array va number qabul qilsin. Siz tuzgan function
-// arrayni numberda berilgan uzunlikda kesib bo'laklarga
-// ajratgan holatida qaytarsin.
-// MASALAN: chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
-// return [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]];
+// Shunday function yozing, uni object va string parametrlari bo'lsin.
+// Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+// necha marotaba takrorlanganlini sanab qaytarsin.
 
-// Yuqoridagi namunada berilayotgan array ikkinchi parametr 3'ga
-// asoslanib 3 bo'lakga bo'linib qaytmoqda. Qolgani esa o'z holati qolyapti
+// Eslatma => Nested object'lar ham sanalsin
+
+// MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+// Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
+// Funktsiya, shu ikkinchi argument 'model', birinchi argument object
+// tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
+
 /*
 
 Project Standards:
@@ -67,6 +77,34 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+
+//TASK W
+
+function chunkArray(arr: number[], size: number): number[][] {
+  if (arr.length === 0) return [];
+
+  const result: number[][] = [
+    arr.slice(0, size),
+    ...chunkArray(arr.slice(size), size),
+  ];
+
+  return result;
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+// Shunday function yozing, u o'ziga parametr sifatida
+// yagona array va number qabul qilsin. Siz tuzgan function
+// arrayni numberda berilgan uzunlikda kesib bo'laklarga
+// ajratgan holatida qaytarsin.
+// MASALAN: chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+// return [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]];
+
+// Yuqoridagi namunada berilayotgan array ikkinchi parametr 3'ga
+// asoslanib 3 bo'lakga bo'linib qaytmoqda. Qolgani esa o'z holati qolyapti
+*/
 
 /*
 //TASK V
