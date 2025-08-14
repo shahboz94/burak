@@ -50,9 +50,7 @@ const memberSchema = new Schema( //class orqari qurilib [new Schema] orqali bili
       default: 0,
     },
   },
-  {
-    timestamps: true, //updatedAt, createdAt qachon hosil qilingani.
-  }
+  { timestamps: true }
 );
 
 export default mongoose.model("Member", memberSchema); // mongusda modul degan mezet orqali schema modelini hosil qiladi va sharli ravishda 'member' atab yuqoridagi memberschemani argument sifatida olamiz. // shu orqali modelga aylandi
