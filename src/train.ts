@@ -1,37 +1,33 @@
 console.log("--- ---");
+// TASK Y
 
-// TASK X
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//   const number = arr1.filter((item) => arr2.includes(item));
+//   return [...new Set(number)].sort((a, b) => a - b);
+//   console.log(intersection); // optional: filter qilingan natijani ko‘rish uchun
+//   return result;
+// }
 
-function countOccurrences(obj: Record<string, any>, keyName: string): any {
-  const result = Object.keys(obj).reduce((count, key) => {
-    const text = key === keyName ? 1 : 0;
-    const text2 =
-      typeof obj[key] === "object" && obj[key] !== null
-        ? countOccurrences(obj[key], keyName)
-        : 0;
-    return count + text + text2;
-  }, 0);
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  const intersection = arr1.filter((item) => arr2.includes(item));
+  const result = [...new Set(intersection)].sort((a, b) => a - b);
+  console.log(intersection);
   return result;
 }
 
-console.log(
-  countOccurrences(
-    { model: "Genesis", steer: { model: "HANKOOK", size: 20 } },
-    "model"
-  )
-);
+findIntersection([5, 7, 9], [3, 7, 9]);
+findIntersection([5, 6, 9], [3, 6, 9]);
 
-// Shunday function yozing, uni object va string parametrlari bo'lsin.
-// Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
-// necha marotaba takrorlanganlini sanab qaytarsin.
+// Shunday function yozing, uni 2'ta array parametri bo'lsin.
+// Bu function ikkala arrayda ham ishtirok etgan bir xil
+// qiymatlarni yagona arrayga joylab qaytarsin.
 
-// Eslatma => Nested object'lar ham sanalsin
+// MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 
-// MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
-
-// Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
-// Funktsiya, shu ikkinchi argument 'model', birinchi argument object
-// tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
+// Yuqoridagi misolda, argument sifatida berilayotgan array'larda
+// o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
+// ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
+// joylab return qilmoqda.
 
 /*
 
@@ -78,6 +74,42 @@ Modern FD           => SPA           =>   REACT
 
 //.                           TASKLAR:
 
+/*
+
+// TASK X
+
+function countOccurrences(obj: Record<string, any>, keyName: string): any {
+  const result = Object.keys(obj).reduce((count, key) => {
+    const text = key === keyName ? 1 : 0;
+    const text2 =
+      typeof obj[key] === "object" && obj[key] !== null
+        ? countOccurrences(obj[key], keyName)
+        : 0;
+    return count + text + text2;
+  }, 0);
+  return result;
+}
+
+console.log(
+  countOccurrences(
+    { model: "Genesis", steer: { model: "HANKOOK", size: 20 } },
+    "model"
+  )
+);
+
+// Shunday function yozing, uni object va string parametrlari bo'lsin.
+// Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+// necha marotaba takrorlanganlini sanab qaytarsin.
+
+// Eslatma => Nested object'lar ham sanalsin
+
+// MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+// Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
+// Funktsiya, shu ikkinchi argument 'model', birinchi argument object
+// tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
+
+*/
 /*
 
 //TASK W
