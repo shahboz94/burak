@@ -33,15 +33,15 @@ class ProductService {
     }
 
     const sort: T =
-      inquiry.order === "productPrice"
-        ? { [inquiry.order]: 1 }
-        : { [inquiry.order]: -1 };
+      inquiry.order === "productPrice" //inquiry.order qiymatini tekshiradi dayinamik keylarni oladi Agar "productPrice" bo‘lsa 1ga 2ga createdat
+        ? { [inquiry.order]: 1 } //productPrice keysi qanotlantirilib eng arzoni boshiga
+        : { [inquiry.order]: -1 }; //createdat keysi eng yangisini boshiga
 
     const result = await this.productModel
       .aggregate([
         { $match: match },
         { $sort: sort },
-        { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
+        { $skip: (inquiry.page * 1 - 1) * inquiry.limit }, //nechtadur malumot otgazish yani 0 ta
         { $limit: inquiry.limit * 1 },
       ])
       .exec();
