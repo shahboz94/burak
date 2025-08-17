@@ -1,33 +1,30 @@
 console.log("--- ---");
-// TASK Y
 
-// function findIntersection(arr1: number[], arr2: number[]): number[] {
-//   const number = arr1.filter((item) => arr2.includes(item));
-//   return [...new Set(number)].sort((a, b) => a - b);
-//   console.log(intersection); // optional: filter qilingan natijani ko‘rish uchun
-//   return result;
-// }
+// TASK Z
 
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-  const intersection = arr1.filter((item) => arr2.includes(item));
-  const result = [...new Set(intersection)].sort((a, b) => a - b);
-  console.log(intersection);
+function sumEvens(numbers: number[]): number {
+  const result = numbers
+    .filter((num) => num % 2 === 0)
+    .reduce((sum, num) => sum + num, 0);
+
+  console.log("return:", result);
   return result;
 }
 
-findIntersection([5, 7, 9], [3, 7, 9]);
-findIntersection([5, 6, 9], [3, 6, 9]);
+sumEvens([4, 5, 8]);
+sumEvens([3, 6, 7, 8]);
 
-// Shunday function yozing, uni 2'ta array parametri bo'lsin.
-// Bu function ikkala arrayda ham ishtirok etgan bir xil
-// qiymatlarni yagona arrayga joylab qaytarsin.
+// Shunday function yozing. Bu function sonlardan iborat array
+// qabul qilsin. Function'ning vazifasi array tarkibidagi juft
+// sonlarni topib ularni yig'disini qaytarsin.
 
-// MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+// MASALAN:
+// sumEvens([1, 2, 3]); return 2;
+// sumEvens([1, 2, 3, 2]); return 4;
 
-// Yuqoridagi misolda, argument sifatida berilayotgan array'larda
-// o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
-// ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
-// joylab return qilmoqda.
+// Yuqoridagi misolda, bizning funktsiya
+// berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
+// sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda.
 
 /*
 
@@ -74,6 +71,38 @@ Modern FD           => SPA           =>   REACT
 
 //.                           TASKLAR:
 
+/*
+TASK Y
+
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  const number = arr1.filter((item) => arr2.includes(item));
+  return [...new Set(number)].sort((a, b) => a - b);
+  console.log(intersection); // optional: filter qilingan natijani ko‘rish uchun
+  return result;
+}
+
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  const intersection = arr1.filter((item) => arr2.includes(item));
+  const result = [...new Set(intersection)].sort((a, b) => a - b);
+  console.log(intersection);
+  return result;
+}
+
+findIntersection([5, 7, 9], [3, 7, 9]);
+findIntersection([5, 6, 9], [3, 6, 9]);
+
+Shunday function yozing, uni 2'ta array parametri bo'lsin.
+Bu function ikkala arrayda ham ishtirok etgan bir xil
+qiymatlarni yagona arrayga joylab qaytarsin.
+
+MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+
+Yuqoridagi misolda, argument sifatida berilayotgan array'larda
+o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
+ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
+joylab return qilmoqda.
+
+*/
 /*
 
 // TASK X
