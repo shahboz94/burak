@@ -51,7 +51,7 @@ router.get(
 );
 router.post(
   "/order/update",
-  memberController.verifyAuth,
+  memberController.verifyAuth, //faqat au zen ti ket bolgan uzerlargina
   orderController.updateOrder
 );
 

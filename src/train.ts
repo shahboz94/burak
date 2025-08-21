@@ -1,30 +1,20 @@
 console.log("--- ---");
 
-// TASK Z
-
-function sumEvens(numbers: number[]): number {
-  const result = numbers
-    .filter((num) => num % 2 === 0)
-    .reduce((sum, num) => sum + num, 0);
-
-  console.log("return:", result);
-  return result;
+//TASK ZA
+function sortByAge(arr: { age: number }[]): { age: number }[] {
+  const sortAgeArray = arr.sort((a, b) => a.age - b.age);
+  console.log(sortAgeArray);
+  return sortAgeArray;
 }
+sortByAge([{ age: 43 }, { age: 31 }, { age: 15 }, { age: 55 }]);
 
-sumEvens([4, 5, 8]);
-sumEvens([3, 6, 7, 8]);
+// Shunday function yozing, u array ichidagi objectlarni
+// 'age' qiymati bo'yicha sortlab bersin.
 
-// Shunday function yozing. Bu function sonlardan iborat array
-// qabul qilsin. Function'ning vazifasi array tarkibidagi juft
-// sonlarni topib ularni yig'disini qaytarsin.
+// MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
 
-// MASALAN:
-// sumEvens([1, 2, 3]); return 2;
-// sumEvens([1, 2, 3, 2]); return 4;
-
-// Yuqoridagi misolda, bizning funktsiya
-// berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
-// sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda.
+// Yuqoridagi misolda, kichik raqamlar katta raqamlar tomon
+// tartiblangan holatda return bo'lmoqda.
 
 /*
 
@@ -70,6 +60,36 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+/*
+
+
+// TASK Z
+
+function sumEvens(numbers: number[]): number {
+  const result = numbers
+    .filter((num) => num % 2 === 0)
+    .reduce((sum, num) => sum + num, 0);
+
+  console.log("return:", result);
+  return result;
+}
+
+sumEvens([4, 5, 8]);
+sumEvens([3, 6, 7, 8]);
+
+// Shunday function yozing. Bu function sonlardan iborat array
+// qabul qilsin. Function'ning vazifasi array tarkibidagi juft
+// sonlarni topib ularni yig'disini qaytarsin.
+
+// MASALAN:
+// sumEvens([1, 2, 3]); return 2;
+// sumEvens([1, 2, 3, 2]); return 4;
+
+// Yuqoridagi misolda, bizning funktsiya
+// berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
+// sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda.
+
+*/
 
 /*
 TASK Y

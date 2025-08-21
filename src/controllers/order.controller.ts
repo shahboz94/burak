@@ -34,6 +34,8 @@ orderController.getMyOrders = async (req: ExtendedRequest, res: Response) => {
     console.log("inquiry:", inquiry);
     const result = await orderService.getMyOrders(req.member, inquiry);
 
+    console.log("productData:");
+
     res.status(HttpCode.CREATED).json(result);
   } catch (err) {
     console.log("Error, getMyOrders:", err);
