@@ -1,20 +1,25 @@
 console.log("--- ---");
-
-//TASK ZA
-function sortByAge(arr: { age: number }[]): { age: number }[] {
-  const sortAgeArray = arr.sort((a, b) => a.age - b.age);
-  console.log(sortAgeArray);
-  return sortAgeArray;
+// TASK ZC
+function celsiusToFahrenheit(celsius: number): number {
+  const fahrenheit = (celsius * 9) / 5 + 32;
+  console.log(fahrenheit);
+  return fahrenheit;
 }
-sortByAge([{ age: 43 }, { age: 31 }, { age: 15 }, { age: 55 }]);
+celsiusToFahrenheit(0);
+celsiusToFahrenheit(10);
+celsiusToFahrenheit(25);
+celsiusToFahrenheit(-10);
 
-// Shunday function yozing, u array ichidagi objectlarni
-// 'age' qiymati bo'yicha sortlab bersin.
+// Selisy (°C) shkalasi bo'yicha raqam qabul qilib, uni
+// Ferenhayt (°F) shkalisaga o'zgaritib beradigan function yozing.
 
-// MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
+// MASALAN: celsiusToFahrenheit(0) return 32;
+// MASALAN: celsiusToFahrenheit(10) return 50;
 
-// Yuqoridagi misolda, kichik raqamlar katta raqamlar tomon
-// tartiblangan holatda return bo'lmoqda.
+// Yuqoridagi misolda, 0°C, 32°F'ga teng.
+// Yoki 10 gradus Selsiy, 50 Farenhaytga teng.
+
+// °C va °F => Tempraturani o'lchashda ishlatiladigan o'lchov birligi.
 
 /*
 
@@ -60,8 +65,27 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
 /*
 
+//TASK ZA
+function sortByAge(arr: { age: number }[]): { age: number }[] {
+  const sortAgeArray = arr.sort((a, b) => a.age - b.age);
+  console.log(sortAgeArray);
+  return sortAgeArray;
+}
+sortByAge([{ age: 43 }, { age: 31 }, { age: 15 }, { age: 55 }]);
+
+// Shunday function yozing, u array ichidagi objectlarni
+// 'age' qiymati bo'yicha sortlab bersin.
+
+// MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
+
+// Yuqoridagi misolda, kichik raqamlar katta raqamlar tomon
+// tartiblangan holatda return bo'lmoqda.
+
+*/
+/*
 
 // TASK Z
 
