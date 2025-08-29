@@ -93,15 +93,15 @@ class MemberService {
   }
 
   public async getTopUsers(): Promise<Member[]> {
-    // promisda member array return qiladi
     const result = await this.memberModel
       .find({
-        // call qilib codishonni beryapmiz yani memberStatus activ memberPointi yuqori bolgan yuzerlar ol deyapmiz
         memberStatus: MemberStatus.ACTIVE,
-        memberPoints: { $gte: 1 },
-      }) // querin ni commandalar kiritib
-      .sort({ memberPoints: -1 }) //yuqoridan pastga
-      .limit(4) // eng 4tasini oladi
+        memberPoints: { $gte: 1 }, //greater than degani
+      })
+      .sort({ memberPoints: -1 }) // -1 / 'desc' yuqoridan pastga sort qil,
+      // point yuqorilarni birinchiga chiqar;
+      // +1 / 'asc')bolsa eng kichikdan kattaga qarab sort qil degani
+      .limit(4)
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
