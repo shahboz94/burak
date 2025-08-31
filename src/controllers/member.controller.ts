@@ -119,7 +119,6 @@ memberController.getTopUsers = async (req: Request, res: Response) => {
   try {
     console.log("getTopUsers");
     const result = await memberService.getTopUsers();
-    console.log("TopUsers result:", result);
 
     res.status(HttpCode.OK).json(result);
   } catch (err) {
