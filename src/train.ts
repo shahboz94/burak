@@ -1,24 +1,32 @@
 console.log("--- ---");
-// TASK ZE
 
-function removeDuplicate(text: string): string {
-  const result = Array.from(new Set(text)).join("");
+// TASK ZF
+
+function capitalizeWords(text: string): string {
+  const result = text
+    .split(" ")
+    .map((soz) =>
+      soz.length > 2 ? soz.charAt(0).toUpperCase() + soz.slice(1) : soz
+    )
+    .join(" ");
+
   console.log(result);
   return result;
 }
 
-removeDuplicate("hello");
-removeDuplicate("stringg");
+capitalizeWords("name should be a string");
+capitalizeWords("typescript is powerful");
+capitalizeWords("hello world from a javascript");
 
-// Shunday function yozing, uniygona string parametri mavjud bo'lsin.
-// Bu function string tarkibidagi takrorlangan xarflarni olib tashlab qolgan
-// qiymatni qaytarsin.
+// Shunday function yozing, uni string parametri bo'lsin.
+// Ushbu function, har bir so'zni bosh harflarini katta harf qilib qaytarsin.
+// Lekin uzunligi 1 yoki 2 harfga teng bo'lgan so'zlarni esa o'z holicha
+// qoldirsin.
 
-// MASALAN: removeDuplicate('stringg') return 'string'
+// MASALAN: capitalizeWords('name should be a string'); return 'Name Should be a String';
 
-// Yuqoridagi misolda, 'stringg' so'zi tarkibida 'g' harfi takrorlanmoqda
-// funktsiyamiz shu bittadan ortiq takrorlangan harfni olib natijani
-// qaytarmoqda.
+// Yuqoridagi misolda, bizning function, uzunligi 2 harfdan katta bo'lgan so'zlarnigina,
+// birinchi harfini katta harf bilan qaytarmoqda.
 
 /*
 
@@ -64,6 +72,31 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+
+// TASK ZE
+
+function removeDuplicate(text: string): string {
+  const result = Array.from(new Set(text)).join("");
+  console.log(result);
+  return result;
+}
+
+removeDuplicate("hello");
+removeDuplicate("stringg");
+
+// Shunday function yozing, uniygona string parametri mavjud bo'lsin.
+// Bu function string tarkibidagi takrorlangan xarflarni olib tashlab qolgan
+// qiymatni qaytarsin.
+
+// MASALAN: removeDuplicate('stringg') return 'string'
+
+// Yuqoridagi misolda, 'stringg' so'zi tarkibida 'g' harfi takrorlanmoqda
+// funktsiyamiz shu bittadan ortiq takrorlangan harfni olib natijani
+// qaytarmoqda.
+
+*/
 
 /*
 
