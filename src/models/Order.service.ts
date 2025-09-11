@@ -101,7 +101,7 @@ class OrderService {
       .exec();
     if (!result.length)
       throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
-    return result;
+    return result || [];
   }
   public async updateOrder(
     member: Member,

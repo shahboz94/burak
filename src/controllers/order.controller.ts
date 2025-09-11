@@ -36,7 +36,7 @@ orderController.getMyOrders = async (req: ExtendedRequest, res: Response) => {
 
     console.log("productData:");
 
-    res.status(HttpCode.CREATED).json(result);
+    res.status(HttpCode.OK).json(result);
   } catch (err) {
     console.log("Error, getMyOrders:", err);
     if (err instanceof Errors) res.status(err.code).json(err);

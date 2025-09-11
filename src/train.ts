@@ -1,32 +1,26 @@
 console.log("--- ---");
+// TASK ZG
 
-// TASK ZF
-
-function capitalizeWords(text: string): string {
+function convertToSnakeCase(text: string): string {
   const result = text
-    .split(" ")
-    .map((soz) =>
-      soz.length > 2 ? soz.charAt(0).toUpperCase() + soz.slice(1) : soz
-    )
-    .join(" ");
+    .trim()
+    .toLowerCase()
+    .split(/[\s-]+/)
+    .filter(Boolean)
+    .join("-");
 
   console.log(result);
   return result;
 }
 
-capitalizeWords("name should be a string");
-capitalizeWords("typescript is powerful");
-capitalizeWords("hello world from a javascript");
+convertToSnakeCase("name should be a string-");
+convertToSnakeCase("name should be a string");
 
-// Shunday function yozing, uni string parametri bo'lsin.
-// Ushbu function, har bir so'zni bosh harflarini katta harf qilib qaytarsin.
-// Lekin uzunligi 1 yoki 2 harfga teng bo'lgan so'zlarni esa o'z holicha
-// qoldirsin.
+// String sifatida berilgan string parametrni
+// snake case'ga o'tkazib beradigan function yozing.
 
-// MASALAN: capitalizeWords('name should be a string'); return 'Name Should be a String';
-
-// Yuqoridagi misolda, bizning function, uzunligi 2 harfdan katta bo'lgan so'zlarnigina,
-// birinchi harfini katta harf bilan qaytarmoqda.
+// MASALAN: convertToSnakeCase('name should be a string')
+// return 'name_should_be_a_string'
 
 /*
 
@@ -72,6 +66,38 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+
+// TASK ZF
+
+function capitalizeWords(text: string): string {
+  const result = text
+    .split(" ")
+    .map((soz) =>
+      soz.length > 2 ? soz.charAt(0).toUpperCase() + soz.slice(1) : soz
+    )
+    .join(" ");
+
+  console.log(result);
+  return result;
+}
+
+capitalizeWords("name should be a string");
+capitalizeWords("typescript is powerful");
+capitalizeWords("hello world from a javascript");
+
+// Shunday function yozing, uni string parametri bo'lsin.
+// Ushbu function, har bir so'zni bosh harflarini katta harf qilib qaytarsin.
+// Lekin uzunligi 1 yoki 2 harfga teng bo'lgan so'zlarni esa o'z holicha
+// qoldirsin.
+
+// MASALAN: capitalizeWords('name should be a string'); return 'Name Should be a String';
+
+// Yuqoridagi misolda, bizning function, uzunligi 2 harfdan katta bo'lgan so'zlarnigina,
+// birinchi harfini katta harf bilan qaytarmoqda.
+
+*/
 
 /*
 
