@@ -1,26 +1,35 @@
 console.log("--- ---");
-// TASK ZG
+// TASK ZH
 
-function convertToSnakeCase(text: string): string {
-  const result = text
-    .trim()
-    .toLowerCase()
-    .split(/[\s-]+/)
-    .filter(Boolean)
-    .join("-");
+function findDisappearedNumbers(arr: number[]): number[] {
+  if (arr.length === 0) return [];
+
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  const set = new Set(arr);
+
+  const result = Array.from(
+    { length: max - min + 1 },
+    (_, i) => i + min
+  ).filter((num) => !set.has(num));
 
   console.log(result);
   return result;
 }
 
-convertToSnakeCase("name should be a string-");
-convertToSnakeCase("name should be a string");
+// Test
+findDisappearedNumbers([1, 3, 4, 7]); // [2, 5, 6]
+findDisappearedNumbers([10, 12, 15]); // [11, 13, 14]
 
-// String sifatida berilgan string parametrni
-// snake case'ga o'tkazib beradigan function yozing.
+// Shunday function yozing, u berilgan array parametri ichidagi
+// raqamlar orasidan, tartib bo'yicha eng kichik raqamdan, eng katta raqamgacha
+// tushirib qoldirilgan sonlarni o'zinigina topib bir array sifatida qaytarsin.
 
-// MASALAN: convertToSnakeCase('name should be a string')
-// return 'name_should_be_a_string'
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]); return [2, 5, 6];
+
+// Yuqoridagi misolda, eng katta raqam bu 7 va eng kichik raqam bu 1.
+// Function'ning vazifasi berilgan sonlar ichidan tushirib qoldirilgan
+// sonlarnigina topib qaytarmoqda.
 
 /*
 
@@ -66,6 +75,34 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+
+
+// TASK ZG
+
+function convertToSnakeCase(text: string): string {
+  const result = text
+    .trim()
+    .toLowerCase()
+    .split(/[\s-]+/)
+    .filter(Boolean)
+    .join("-");
+
+  console.log(result);
+  return result;
+}
+
+convertToSnakeCase("name should be a string-");
+convertToSnakeCase("name should be a string");
+
+// String sifatida berilgan string parametrni
+// snake case'ga o'tkazib beradigan function yozing.
+
+// MASALAN: convertToSnakeCase('name should be a string')
+// return 'name_should_be_a_string'
+
+*/
 
 /*
 
