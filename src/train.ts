@@ -1,35 +1,23 @@
 console.log("--- ---");
-// TASK ZH
 
-function findDisappearedNumbers(arr: number[]): number[] {
-  if (arr.length === 0) return [];
+// TASK ZI
 
-  const min = Math.min(...arr);
-  const max = Math.max(...arr);
-  const set = new Set(arr);
-
-  const result = Array.from(
-    { length: max - min + 1 },
-    (_, i) => i + min
-  ).filter((num) => !set.has(num));
-
-  console.log(result);
-  return result;
+function delayHelloWorld(text: string): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(text);
+    }, 3000);
+  });
 }
 
-// Test
-findDisappearedNumbers([1, 3, 4, 7]); // [2, 5, 6]
-findDisappearedNumbers([10, 12, 15]); // [11, 13, 14]
+delayHelloWorld("Hello World").then((result) => {
+  console.log(result);
+});
 
-// Shunday function yozing, u berilgan array parametri ichidagi
-// raqamlar orasidan, tartib bo'yicha eng kichik raqamdan, eng katta raqamgacha
-// tushirib qoldirilgan sonlarni o'zinigina topib bir array sifatida qaytarsin.
+// Shundan function yozing, bu function 3 soniydan so'ng
+// "Hello World!" so'zini qaytarsin.
 
-// MASALAN: findDisappearedNumbers([1, 3, 4, 7]); return [2, 5, 6];
-
-// Yuqoridagi misolda, eng katta raqam bu 7 va eng kichik raqam bu 1.
-// Function'ning vazifasi berilgan sonlar ichidan tushirib qoldirilgan
-// sonlarnigina topib qaytarmoqda.
+// MASALAN: delayHelloWorld("Hello World"); return "Hello World";
 
 /*
 
@@ -78,6 +66,41 @@ Modern FD           => SPA           =>   REACT
 
 /*
 
+// TASK ZH
+
+function findDisappearedNumbers(arr: number[]): number[] {
+  if (arr.length === 0) return [];
+
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  const set = new Set(arr);
+
+  const result = Array.from(
+    { length: max - min + 1 },
+    (_, i) => i + min
+  ).filter((num) => !set.has(num));
+
+  console.log(result);
+  return result;
+}
+
+// Test
+findDisappearedNumbers([1, 3, 4, 7]); // [2, 5, 6]
+findDisappearedNumbers([10, 12, 15]); // [11, 13, 14]
+
+// Shunday function yozing, u berilgan array parametri ichidagi
+// raqamlar orasidan, tartib bo'yicha eng kichik raqamdan, eng katta raqamgacha
+// tushirib qoldirilgan sonlarni o'zinigina topib bir array sifatida qaytarsin.
+
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]); return [2, 5, 6];
+
+// Yuqoridagi misolda, eng katta raqam bu 7 va eng kichik raqam bu 1.
+// Function'ning vazifasi berilgan sonlar ichidan tushirib qoldirilgan
+// sonlarnigina topib qaytarmoqda.
+
+*/
+
+/*
 
 // TASK ZG
 
