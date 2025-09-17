@@ -1,23 +1,22 @@
 console.log("--- ---");
+// TASK ZJ:
 
-// TASK ZI
-
-function delayHelloWorld(text: string): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(text);
-    }, 3000);
-  });
+function reduceNestedArray(arr: any[]): number {
+  const result = arr.flat(Infinity).reduce((sum, num) => sum + num, 0);
+  console.log("Result:", result);
+  return result;
 }
 
-delayHelloWorld("Hello World").then((result) => {
-  console.log(result);
-});
+reduceNestedArray([1, [1, 2, [4]]]);
+reduceNestedArray([5, [3, [2, 1]], 4]);
 
-// Shundan function yozing, bu function 3 soniydan so'ng
-// "Hello World!" so'zini qaytarsin.
+// Shunday function yozing, u berilgan array ichidagi
+// raqamlarni qiymatini hisoblab qaytarsin.
 
-// MASALAN: delayHelloWorld("Hello World"); return "Hello World";
+// MASALAN: reduceNestedArray([1, [1, 2, [4]]]); return 8;
+
+// Yuqoridagi misolda, array nested bo'lgan holdatda ham,
+// bizning function ularning yig'indisini hisoblab qaytarmoqda.
 
 /*
 
@@ -63,6 +62,28 @@ Modern FD           => SPA           =>   REACT
 */
 
 //.                           TASKLAR:
+
+/*
+// TASK ZI
+
+function delayHelloWorld(text: string): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(text);
+    }, 3000);
+  });
+}
+
+delayHelloWorld("Hello World").then((result) => {
+  console.log(result);
+});
+
+// Shundan function yozing, bu function 3 soniydan so'ng
+// "Hello World!" so'zini qaytarsin.
+
+// MASALAN: delayHelloWorld("Hello World"); return "Hello World";
+
+*/
 
 /*
 
