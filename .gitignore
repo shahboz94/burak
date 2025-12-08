@@ -1,6 +1,22 @@
-node_modules
-dist
+# Node dependencies
+node_modules/
 
+# Build files
+dist/
+
+# Environment variables
 .env
 
-uploads
+# Uploaded files
+uploads/
+
+# Mac junk files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Patch files (xohlasang qo‘shib qo‘y)
+*.patch
